@@ -1,0 +1,2 @@
+# NextCloudInstaller
+اسکریپت نصب NextCloud
