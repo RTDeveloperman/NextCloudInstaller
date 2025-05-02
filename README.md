@@ -30,7 +30,9 @@
 
 ```bash
 # دانلود و اجرای مستقیم اسکریپت از گیت‌هاب
-curl -s https://raw.githubusercontent.com/RTDeveloperman/NextCloudInstaller/refs/heads/main/NextCloud_Installer.sh | sudo bash
+curl -O https://raw.githubusercontent.com/RTDeveloperman/NextCloudInstaller/main/NextCloud_Installer.sh
+chmod +x NextCloud_Installer.sh
+sudo ./NextCloud_Installer.sh
 ```
 
 
