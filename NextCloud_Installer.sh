@@ -70,7 +70,7 @@ PORT=${PORT:-$DEFAULT_PORT}
 echo "📦 Installing dependencies..."
 apt update && apt install -y nginx mariadb-server redis-server \
     php php-cli php-fpm php-mysql php-xml php-gd php-curl php-zip \
-    php-mbstring php-intl php-bcmath php-imagick php-redis unzip wget curl
+    php-mbstring php-intl php-bcmath php-imagick php-redis php-ldap unzip wget curl
 
 PHP_VER=$(php -r 'echo PHP_MAJOR_VERSION.".".PHP_MINOR_VERSION;')
 
@@ -197,8 +197,12 @@ server {
 EOF
 
 ln -sf /etc/nginx/sites-available/nextcloud /etc/nginx/sites-enabled/
-nginx -t && systemctl reload nginx
+
+# ====== Restart PHP-FPM before reloading NGINX ======
 systemctl restart php${PHP_VER}-fpm
+
+# ====== Reload NGINX ======
+nginx -t && systemctl reload nginx
 
 # ====== Install Nextcloud (Silent) ======
 echo "🚀 Installing Nextcloud..."
