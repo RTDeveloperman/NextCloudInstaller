@@ -3,7 +3,6 @@
 # 🌩️ Nextcloud Auto-Installer Script
 
 <div align="center">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a3/NEXTcloud.svg" width="200" />
   <h2>نصب خودکار Nextcloud با MariaDB, Redis, Nginx و PHP</h2>
   <p>اسکریپت Bash برای نصب سریع و امن Nextcloud روی سرورهای Ubuntu/Debian</p>
 </div>
